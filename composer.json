@@ -10,7 +10,7 @@
         }
     ],
 
-  "require" : {
+    "require" : {
 		"psr/log" : "~1.0",
 		"rhumsaa/uuid" : "~2.7"
 	},
