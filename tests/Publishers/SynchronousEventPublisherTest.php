@@ -6,7 +6,6 @@ use Evaneos\Events\Publishers\SynchronousEventPublisher;
 
 class SynchronousEventPublisherTest extends \PHPUnit_Framework_TestCase
 {
-
     private $mockDispatcher;
 
     protected function setUp()
@@ -26,5 +25,4 @@ class SynchronousEventPublisherTest extends \PHPUnit_Framework_TestCase
 
         $publisher->publish($event);
     }
-
 }

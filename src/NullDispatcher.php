@@ -3,7 +3,6 @@ namespace Evaneos\Events;
 
 class NullDispatcher implements EventDispatcher
 {
-
     private $verbose = false;
 
     public function __construct($verbose = false)

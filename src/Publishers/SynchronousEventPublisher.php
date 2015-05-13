@@ -14,7 +14,7 @@ class SynchronousEventPublisher implements \Evaneos\Events\EventPublisher
     private $dispatcher;
     
     /**
-     * 
+     *
      * @var EventQueueManager
      */
     private $queueManager;

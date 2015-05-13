@@ -48,7 +48,7 @@ class RabbitMQEventProcessor implements EventProcessor
     {
         $serializer = $this->serializer;
 
-        $callback = function($message) use ($dispatcher, $serializer, $channel) {
+        $callback = function ($message) use ($dispatcher, $serializer, $channel) {
             $serializedEvent = $message->body;
             $event = $serializer->deserialize($serializedEvent);
 
@@ -66,6 +66,4 @@ class RabbitMQEventProcessor implements EventProcessor
             $this->channel->wait();
         }
     }
-
-
 }

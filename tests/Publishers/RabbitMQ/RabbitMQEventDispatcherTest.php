@@ -3,7 +3,8 @@
 namespace Evaneos\Events\Tests\Publishers\RabbitMQ;
 
 use Evaneos\Events\Publishers\RabbitMQ\RabbitMQEventPublisher;
-class RabbitMQEventPublisherTest extends \PHPUnit_Framework_TestCase
+
+class RabbitMQEventDispatcherTest extends \PHPUnit_Framework_TestCase
 {
 
     protected $serializer;
@@ -19,7 +20,6 @@ class RabbitMQEventPublisherTest extends \PHPUnit_Framework_TestCase
         $this->channel =$this->getMockBuilder('\PhpAmqpLib\Channel\AMQPChannel')
             ->disableOriginalConstructor()
             ->getMock();
-
     }
 
     public function testEventIsPublishedToQueue()
