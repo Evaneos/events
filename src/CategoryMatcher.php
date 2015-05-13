@@ -4,7 +4,6 @@ namespace Evaneos\Events;
 
 class CategoryMatcher
 {
-
     public function checkMatch($pattern, $category)
     {
         $filterParts = explode('.', $pattern);
@@ -25,13 +24,11 @@ class CategoryMatcher
 
             if ($filterParts[$i] == '*') {
                 continue;
-            }
-            elseif ($filterParts[$i] != $categoryParts[$i]) {
+            } elseif ($filterParts[$i] != $categoryParts[$i]) {
                 return false;
             }
         }
 
         return true;
     }
-
 }

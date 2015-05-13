@@ -2,34 +2,44 @@
 	"name" : "evaneos/events",
 	"description" : "Evaneos Event Library",
 	"type" : "library",
-	"require" : {
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:Evaneos/Burrow.git"
+        }
+    ],
+
+    "require" : {
 		"psr/log" : "~1.0",
 		"rhumsaa/uuid" : "~2.7"
 	},
+
 	"autoload" : {
 		"psr-4" : {
 			"Evaneos\\Events\\" : "src",
 			"Evaneos\\Events\\Example\\" : "examples/src"
 		}
 	},
-	"repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:Evaneos/Burrow.git"
-        }
-    ],
-	"require-dev" : {
+
+	"require-dev": {
 		"squizlabs/php_codesniffer" : "~1.5",
 		"league/phpunit-coverage-listener" : "~1.0",
-		"videlalvaro/php-amqplib" : "~2",
-		"predis/predis" : "~0.8",
-		"evaneos/burrow" : "~1.0.0"
+		"videlalvaro/php-amqplib" : "~2.0",
+		"evaneos/burrow" : "~2.0"
 	},
-	"suggest" : {
-		"videlalvaro/php-amqplib" : "Allows usage of the RabbitMQ event publisher.",
-		"predis/predis" : "Allows usage of the Redis event publisher.",
-		"ext-mysql" : "Allows usage of the PDO event publisher with MySQL",
-		"ext-pgsql" : "Allows usage of the PDO event publisher with PostgreSQL",
-		"evaneos/burrow" : "Allows usage of the RabbitMQ event publisher."
-	}
+
+	"suggest": {
+		"videlalvaro/php-amqplib": "Allows usage of the RabbitMQ event publisher.",
+		"predis/predis": "Allows usage of the Redis event publisher.",
+		"ext-mysql": "Allows usage of the PDO event publisher with MySQL",
+		"ext-pgsql": "Allows usage of the PDO event publisher with PostgreSQL",
+		"evaneos/burrow": "Allows usage of the RabbitMQ event publisher."
+	},
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.1.x-dev"
+        }
+    }
 }

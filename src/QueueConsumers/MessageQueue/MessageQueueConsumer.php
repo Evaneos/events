@@ -14,14 +14,14 @@ class MessageQueueConsumer implements QueueConsumer
     private $eventDispatcher;
     
     /**
-     * 
+     *
      * @var Serializer
      */
     private $serializer;
     
     /**
      * Constructor
-     * 
+     *
      * @param EventDispatcher $eventDispatcher
      * @param Serializer $serializer
      */

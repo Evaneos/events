@@ -3,9 +3,9 @@
 namespace Evaneos\Events;
 
 use Evaneos;
+
 class EventSerializer implements Serializer
 {
-
     private $serializationMap = array();
 
     public function bindSerializer($eventCategory, Serializer $serializer)
