@@ -15,8 +15,18 @@ class EventSerializerTest extends \PHPUnit_Framework_TestCase
 
     private $serializationCallback;
 
+    /**
+     * @var \stdClass
+     */
+    private $deserializedObject;
+
     protected function setUp()
     {
+
+        $this->deserializedObject = new \stdClass();
+        $this->deserializedObject->category = 'test';
+        $this->deserializedObject->object = json_encode($this->deserializedObject);
+
         $this->serializationCallback = function () {
             $obj = new \stdClass();
             $obj->category = 'test';
@@ -85,16 +95,17 @@ class EventSerializerTest extends \PHPUnit_Framework_TestCase
     public function testSerializeReturnsExpectedValue()
     {
         $actual = $this->eventSerializer->serialize($this->event);
-        $serializationCallback = $this->serializationCallback;
+        $expected = json_encode($this->deserializedObject);
 
-        $this->assertEquals($serializationCallback(), $actual);
+        $this->assertEquals($expected, $actual);
     }
 
 
     public function testDeserializeReturnsExpectedValue()
     {
-        $serializationCallback = $this->serializationCallback;
-        $actual = $this->eventSerializer->deserialize($serializationCallback());
+        $expected = json_encode($this->deserializedObject);
+
+        $actual = $this->eventSerializer->deserialize($expected);
 
         $this->assertEquals($this->event, $actual);
     }
