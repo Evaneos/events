@@ -12,4 +12,3 @@ before_script:
 
 script: 
   - phpunit --coverage-text --coverage-clover coverage.xml
-  - ./vendor/bin/phpcs --standard=./phpcs.xml -n --report=gitblame ./src
