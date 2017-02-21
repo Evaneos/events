@@ -5,8 +5,8 @@ use Evaneos\Events\EventPublisher;
 use Evaneos\Events\Event;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Message\AMQPMessage;
-use Rhumsaa\Uuid\Uuid;
 use Evaneos\Events\Serializer;
+use Ramsey\Uuid\Uuid;
 
 class RabbitMQEventPublisher implements EventPublisher
 {
