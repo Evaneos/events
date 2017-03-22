@@ -35,7 +35,7 @@ class MessageQueueConsumer implements QueueConsumer
      * (non-PHPdoc)
      * @see \Burrow\QueueConsumer::consume()
      */
-    public function consume($message)
+    public function consume($message, array $headers = [])
     {
         $event = $this->serializer->deserialize($message);
         if ($event !== null && $event instanceof Evaneos\Events\Event) {
